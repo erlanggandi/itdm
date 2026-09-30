@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid #18181B;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* ——— Buttons: solid ink primary, hairline ghost. No gradients. ——— */
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 text-[13px] font-medium rounded-lg px-3.5 py-2 transition-colors whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply bg-zinc-900 text-white hover:bg-zinc-700 active:bg-zinc-800;
+  }
+  .btn-ghost {
+    @apply bg-white border border-zinc-200 text-zinc-700 hover:border-zinc-300 hover:bg-zinc-50;
+  }
+  .btn-danger-ghost {
+    @apply bg-white border border-zinc-200 text-zinc-500 hover:text-red-700 hover:border-red-200 hover:bg-red-50;
+  }
+  .icon-btn {
+    @apply p-1.5 rounded-md text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 transition-colors;
+  }
+
+  /* ——— Fields ——— */
+  .field {
+    @apply w-full px-3 py-2 rounded-lg border border-zinc-200 bg-white text-[13px] text-zinc-900 placeholder:text-zinc-400 outline-none transition-colors focus:border-zinc-900;
+  }
+  .lbl {
+    @apply block text-[11px] font-medium text-zinc-500 mb-1;
+  }
+
+  /* ——— Surfaces ——— */
+  .card {
+    @apply bg-white border border-zinc-200 rounded-xl;
+  }
+  .page-title {
+    @apply text-lg font-semibold tracking-tight text-zinc-900;
+  }
+  .page-sub {
+    @apply text-[13px] text-zinc-500 mt-0.5;
+  }
+
+  /* ——— Tables: hairline ledger ——— */
+  .tbl th {
+    @apply py-2.5 px-4 text-[11px] font-medium uppercase tracking-wide text-zinc-400 text-left whitespace-nowrap;
+  }
+  .tbl td {
+    @apply py-3 px-4 text-[13px] text-zinc-600 align-middle;
+  }
+  .tbl tbody tr {
+    @apply border-t border-zinc-100 hover:bg-zinc-50/70 transition-colors;
+  }
+  .mono-data {
+    @apply font-mono text-[12.5px] text-zinc-800;
+  }
+
+  /* ——— Status: dot + words, no rainbow pills ——— */
+  .status {
+    @apply inline-flex items-center gap-1.5 text-xs text-zinc-600 whitespace-nowrap;
+  }
+  .dot {
+    @apply w-1.5 h-1.5 rounded-full flex-shrink-0;
+  }
+
+  /* ——— Modals: white header, hairline, quiet overlay ——— */
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/40;
+  }
+  .modal-shell {
+    @apply bg-white rounded-xl shadow-xl border border-zinc-200 w-full overflow-hidden flex flex-col max-h-[92vh];
+  }
+  .modal-head {
+    @apply px-5 py-4 flex items-center justify-between border-b border-zinc-100;
+  }
+  .modal-title {
+    @apply font-semibold text-[15px] tracking-tight text-zinc-900;
+  }
+  .modal-sub {
+    @apply text-xs text-zinc-500 mt-0.5;
+  }
+}
+
+/* Subtle scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+  border: 2px solid #FAFAF9;
+}
+
+/* Print styles for slip preview */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
