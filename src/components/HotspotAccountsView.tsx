@@ -94,13 +94,13 @@ export const HotspotAccountsView: React.FC<HotspotAccountsViewProps> = ({
     return new Map(employees.map(e => [e.id, e]));
   }, [employees]);
 
-  // Index untuk validasi import: username terdaftar + NIK -> id karyawan
+  // Index untuk validasi import: username terdaftar + nama -> id karyawan
   const existingUsernames = useMemo(() => {
     return new Set(hotspots.map(h => h.username.toLowerCase()));
   }, [hotspots]);
 
-  const nikToId = useMemo(() => {
-    return new Map(employees.map(e => [e.nik.toLowerCase(), e.id]));
+  const nameToId = useMemo(() => {
+    return new Map(employees.map(e => [e.name.toLowerCase(), e.id]));
   }, [employees]);
 
   // Unique Profiles
@@ -120,7 +120,6 @@ export const HotspotAccountsView: React.FC<HotspotAccountsViewProps> = ({
         h.ssid.toLowerCase().includes(search) ||
         (h.macAddress && h.macAddress.toLowerCase().includes(search)) ||
         (emp && emp.name.toLowerCase().includes(search)) ||
-        (emp && emp.nik.toLowerCase().includes(search)) ||
         (emp && emp.department.toLowerCase().includes(search));
 
       const matchProfile = selectedProfile === 'ALL' || h.profile === selectedProfile;
@@ -379,10 +378,7 @@ export const HotspotAccountsView: React.FC<HotspotAccountsViewProps> = ({
 
                       <td>
                         {emp ? (
-                          <div>
-                            <span className="text-zinc-800 block">{emp.name}</span>
-                            <span className="font-mono text-[11px] text-zinc-400">{emp.nik}</span>
-                          </div>
+                          <span className="text-zinc-800 block">{emp.name}</span>
                         ) : (
                           <span className="text-zinc-300">—</span>
                         )}
@@ -499,12 +495,12 @@ export const HotspotAccountsView: React.FC<HotspotAccountsViewProps> = ({
           isOpen={isImportOpen}
           onClose={() => setIsImportOpen(false)}
           title="Import akun hotspot"
-          subtitle="CSV · NIK diisi untuk menautkan ke karyawan, password kosong = PIN 6 digit otomatis"
-          formatHint="nik, username, password, ssid, profil, mac, ip, berlaku, status, catatan"
+          subtitle="CSV · nama diisi untuk menautkan ke karyawan, password kosong = PIN 6 digit otomatis"
+          formatHint="nama, username, password, ssid, profil, mac, ip, berlaku, status, catatan"
           entityName="akun hotspot"
           parse={(text) => parseHotspotsCsv(text, {
             existingUsernames,
-            nikToId,
+            nameToId,
             defaultSsid: settings.defaultSsid,
             defaultProfile: settings.defaultHotspotProfile,
           })}
@@ -552,7 +548,7 @@ export const HotspotAccountsView: React.FC<HotspotAccountsViewProps> = ({
                   <option value="">— Tanpa pemilik —</option>
                   {employees.map(emp => (
                     <option key={emp.id} value={emp.id}>
-                      {emp.name} ({emp.nik})
+                      {emp.name}
                     </option>
                   ))}
                 </select>

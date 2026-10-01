@@ -33,7 +33,7 @@ export const MikrotikExportModal: React.FC<MikrotikExportModalProps> = ({
 
   hotspots.forEach(h => {
     const emp = empMap.get(h.employeeId);
-    const comment = `${emp ? `${emp.nik} - ${emp.name} (${emp.department})` : 'Akun Umum'}${h.notes ? ' | ' + h.notes : ''}`;
+    const comment = `${emp ? `${emp.name} (${emp.department})` : 'Akun Umum'}${h.notes ? ' | ' + h.notes : ''}`;
     const disabled = h.status === 'Aktif' ? 'no' : 'yes';
 
     let cmd = `add name="${h.username}" password="${h.password}" profile="${h.profile}"`;

@@ -149,7 +149,7 @@ export const api = {
 
   // BULK IMPORT EMPLOYEES (CSV)
   async importEmployees(rows: EmployeeImportRow[]): Promise<Employee[]> {
-    const clean = rows.filter(r => r.nik?.trim() && r.name?.trim());
+    const clean = rows.filter(r => r.name?.trim());
     if (clean.length === 0) return [];
     try {
       const res = await fetch(`${API_BASE}/employees/bulk`, {
@@ -163,17 +163,16 @@ export const api = {
     } catch {
       // Local fallback: satu tulis localStorage untuk seluruh batch
       const employees = getLocalData<Employee[]>('employees', []);
-      const existing = new Set(employees.map(e => e.nik.toLowerCase()));
+      const existing = new Set(employees.map(e => e.name.toLowerCase()));
       const now = new Date().toISOString();
       const created: Employee[] = [];
       clean.forEach((r, i) => {
-        const nik = r.nik.trim();
-        if (existing.has(nik.toLowerCase())) return;
-        existing.add(nik.toLowerCase());
+        const name = r.name.trim();
+        if (existing.has(name.toLowerCase())) return;
+        existing.add(name.toLowerCase());
         created.unshift({
           ...r,
-          nik,
-          name: r.name.trim(),
+          name,
           id: `emp-${Date.now()}-${i}`,
           createdAt: now,
           updatedAt: now,

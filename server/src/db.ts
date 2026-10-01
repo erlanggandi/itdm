@@ -29,7 +29,6 @@ const defaultSettings: AppSettings = {
 const defaultEmployees: Employee[] = [
   {
     id: 'emp-001',
-    nik: 'KNG-2023-001',
     name: 'Ahmad Fauzi',
     department: 'Information Technology',
     position: 'IT Infrastructure & Network Lead',
@@ -42,7 +41,6 @@ const defaultEmployees: Employee[] = [
   },
   {
     id: 'emp-002',
-    nik: 'KNG-2023-015',
     name: 'Siti Rahmawati',
     department: 'Human Resources & GA',
     position: 'HR Manager',
@@ -55,7 +53,6 @@ const defaultEmployees: Employee[] = [
   },
   {
     id: 'emp-003',
-    nik: 'KNG-2023-042',
     name: 'Budi Santoso',
     department: 'Finance & Accounting',
     position: 'Senior Finance Officer',
@@ -68,7 +65,6 @@ const defaultEmployees: Employee[] = [
   },
   {
     id: 'emp-004',
-    nik: 'KNG-2023-088',
     name: 'Dewi Lestari',
     department: 'Marketing & Creative',
     position: 'Digital Marketing Specialist',
@@ -81,7 +77,6 @@ const defaultEmployees: Employee[] = [
   },
   {
     id: 'emp-005',
-    nik: 'KNG-2024-102',
     name: 'Rian Pratama',
     department: 'Operations',
     position: 'Operations Staff',
@@ -94,7 +89,6 @@ const defaultEmployees: Employee[] = [
   },
   {
     id: 'emp-006',
-    nik: 'KNG-2022-005',
     name: 'Hendra Gunawan',
     department: 'Sales & Business',
     position: 'Account Executive',
@@ -382,28 +376,26 @@ export function createEmployee(data: Omit<Employee, 'id' | 'createdAt' | 'update
     updatedAt: new Date().toISOString(),
   };
   db.employees.unshift(newEmployee);
-  logActivity('CREATE', 'EMPLOYEE', `Menambahkan karyawan baru: ${newEmployee.name} (${newEmployee.nik})`);
+  logActivity('CREATE', 'EMPLOYEE', `Menambahkan karyawan baru: ${newEmployee.name}`);
   saveDb();
   return newEmployee;
 }
 
 /**
- * Bulk insert karyawan (import CSV). NIK duplikat dilewati.
+ * Bulk insert karyawan (import CSV). Nama duplikat dilewati.
  * Satu log + satu tulis file untuk seluruh batch.
  */
 export function createEmployeesBulk(rows: Omit<Employee, 'id' | 'createdAt' | 'updatedAt'>[]): Employee[] {
-  const existingNiks = new Set(db.employees.map(e => e.nik.toLowerCase()));
+  const existingNames = new Set(db.employees.map(e => e.name.toLowerCase()));
   const now = new Date().toISOString();
   const created: Employee[] = [];
 
   rows.forEach((data, i) => {
-    const nik = (data.nik || '').trim();
     const name = (data.name || '').trim();
-    if (!nik || !name || existingNiks.has(nik.toLowerCase())) return;
-    existingNiks.add(nik.toLowerCase());
+    if (!name || existingNames.has(name.toLowerCase())) return;
+    existingNames.add(name.toLowerCase());
     const emp: Employee = {
       ...data,
-      nik,
       name,
       id: `emp-${Date.now()}-${i}-${Math.random().toString(36).substring(2, 6)}`,
       createdAt: now,
@@ -429,7 +421,7 @@ export function updateEmployee(id: string, data: Partial<Employee>): Employee | 
     updatedAt: new Date().toISOString(),
   };
 
-  logActivity('UPDATE', 'EMPLOYEE', `Memperbarui data karyawan: ${db.employees[index].name} (${db.employees[index].nik})`);
+  logActivity('UPDATE', 'EMPLOYEE', `Memperbarui data karyawan: ${db.employees[index].name}`);
   saveDb();
   return db.employees[index];
 }
@@ -442,7 +434,7 @@ export function deleteEmployee(id: string): boolean {
   db.employees.splice(index, 1);
 
   // Optional: unlink or keep email and hotspot accounts
-  logActivity('DELETE', 'EMPLOYEE', `Menghapus karyawan: ${deleted.name} (${deleted.nik})`);
+  logActivity('DELETE', 'EMPLOYEE', `Menghapus karyawan: ${deleted.name}`);
   saveDb();
   return true;
 }

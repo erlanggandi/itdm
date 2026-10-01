@@ -62,7 +62,6 @@ const TRUTHY = new Set(['aktif', 'ya', 'yes', 'y', 'on', 'true', '1']);
 /** Header CSV dinormalisasi -> nama kolom kanonis. Mendukung format export + sederhana. */
 const HEADER_ALIASES: Record<string, string> = {
   // Karyawan
-  nik: 'nik',
   nama: 'name',
   namalengkap: 'name',
   name: 'name',
@@ -88,7 +87,6 @@ const HEADER_ALIASES: Record<string, string> = {
   catatanperangkat: 'notes',
   notes: 'notes',
   // Email
-  nikkaryawan: 'nik',
   email: 'email',
   alamatemail: 'email',
   password: 'password',
@@ -260,28 +258,25 @@ const today = () => new Date().toISOString().slice(0, 10);
 // ─── Karyawan ────────────────────────────────────────────────────────────────
 
 function emptyEmployeeRow(): EmployeeImportRow {
-  return { nik: '', name: '', department: '', position: '', phone: '', status: 'Aktif', joinDate: '', notes: '' };
+  return { name: '', department: '', position: '', phone: '', status: 'Aktif', joinDate: '', notes: '' };
 }
 
-export function parseEmployeesCsv(text: string, existingNiks: Set<string>): ParsedEmployeeRow[] {
+export function parseEmployeesCsv(text: string, existingNames: Set<string>): ParsedEmployeeRow[] {
   const { dataRows, colIndex } = splitCsv(text, 2, 'Header tidak dikenali. Unduh template untuk format yang benar.');
   const keys = [...colIndex.values()];
-  if (!keys.includes('nik') || !keys.includes('name')) {
-    throw new Error('Kolom wajib tidak ada: file harus memuat nik dan nama.');
+  if (!keys.includes('name')) {
+    throw new Error('Kolom wajib tidak ada: file harus memuat nama.');
   }
 
   const seenInFile = new Set<string>();
   return dataRows.map(({ cells, line }) => {
     const get = makeGetter(cells, colIndex);
-    const nik = get('nik');
     const name = get('name');
     const rawStatus = get('status');
 
-    if (!nik && !name) {
+    if (!name) {
       return { line, data: emptyEmployeeRow(), status: 'skipped' as const, message: 'Baris kosong' };
     }
-    if (!nik) return { line, data: emptyEmployeeRow(), status: 'error' as const, message: 'NIK kosong' };
-    if (!name) return { line, data: emptyEmployeeRow(), status: 'error' as const, message: 'Nama kosong' };
 
     let status: EmployeeStatus = 'Aktif';
     if (rawStatus) {
@@ -292,19 +287,18 @@ export function parseEmployeesCsv(text: string, existingNiks: Set<string>): Pars
       status = mapped;
     }
 
-    const nikKey = nik.toLowerCase();
-    if (existingNiks.has(nikKey)) {
-      return { line, data: emptyEmployeeRow(), status: 'skipped' as const, message: 'NIK sudah terdaftar' };
+    const nameKey = name.toLowerCase();
+    if (existingNames.has(nameKey)) {
+      return { line, data: emptyEmployeeRow(), status: 'skipped' as const, message: 'Nama sudah terdaftar' };
     }
-    if (seenInFile.has(nikKey)) {
-      return { line, data: emptyEmployeeRow(), status: 'skipped' as const, message: 'NIK duplikat di file' };
+    if (seenInFile.has(nameKey)) {
+      return { line, data: emptyEmployeeRow(), status: 'skipped' as const, message: 'Nama duplikat di file' };
     }
-    seenInFile.add(nikKey);
+    seenInFile.add(nameKey);
 
     return {
       line,
       data: {
-        nik,
         name,
         department: get('department') || 'Information Technology',
         position: get('position'),
@@ -319,14 +313,14 @@ export function parseEmployeesCsv(text: string, existingNiks: Set<string>): Pars
 }
 
 export function downloadEmployeesTemplate() {
-  downloadCsv('nik,nama,departemen,jabatan,status,tgl_masuk,catatan', 'template_import_karyawan.csv');
+  downloadCsv('nama,departemen,jabatan,status,tgl_masuk,catatan', 'template_import_karyawan.csv');
 }
 
 // ─── Email ───────────────────────────────────────────────────────────────────
 
 export interface EmailImportContext {
   existingEmails: Set<string>;
-  nikToId: Map<string, string>;
+  nameToId: Map<string, string>;
 }
 
 function emptyEmailRow(): EmailImportRow {
@@ -349,9 +343,9 @@ export function parseEmailsCsv(text: string, ctx: EmailImportContext): ParsedImp
     const email = get('email');
     const rawProvider = get('provider');
     const rawStatus = get('status');
-    const nik = get('nik');
+    const employeeName = get('name');
 
-    if (!email && !nik) {
+    if (!email && !employeeName) {
       return { line, data: emptyEmailRow(), status: 'skipped' as const, message: 'Baris kosong' };
     }
     if (!email) return { line, data: emptyEmailRow(), status: 'error' as const, message: 'Email kosong' };
@@ -386,10 +380,10 @@ export function parseEmailsCsv(text: string, ctx: EmailImportContext): ParsedImp
     }
 
     let employeeId = '';
-    if (nik) {
-      const found = ctx.nikToId.get(nik.toLowerCase());
+    if (employeeName) {
+      const found = ctx.nameToId.get(employeeName.toLowerCase());
       if (!found) {
-        return { line, data: emptyEmailRow(), status: 'error' as const, message: `NIK "${nik}" tidak terdaftar` };
+        return { line, data: emptyEmailRow(), status: 'error' as const, message: `Nama "${employeeName}" tidak terdaftar` };
       }
       employeeId = found;
     }
@@ -419,7 +413,7 @@ export function parseEmailsCsv(text: string, ctx: EmailImportContext): ParsedImp
 
 export function downloadEmailsTemplate() {
   downloadCsv(
-    'nik,email,password,provider,lisensi,status,2fa,recovery,forward,catatan',
+    'nama,email,password,provider,lisensi,status,2fa,recovery,forward,catatan',
     'template_import_email.csv',
   );
 }
@@ -428,7 +422,7 @@ export function downloadEmailsTemplate() {
 
 export interface HotspotImportContext {
   existingUsernames: Set<string>;
-  nikToId: Map<string, string>;
+  nameToId: Map<string, string>;
   defaultSsid: string;
   defaultProfile: string;
 }
@@ -451,9 +445,9 @@ export function parseHotspotsCsv(text: string, ctx: HotspotImportContext): Parse
     const get = makeGetter(cells, colIndex);
     const username = get('username');
     const rawStatus = get('status');
-    const nik = get('nik');
+    const employeeName = get('name');
 
-    if (!username && !nik) {
+    if (!username && !employeeName) {
       return { line, data: emptyHotspotRow(), status: 'skipped' as const, message: 'Baris kosong' };
     }
     if (!username) return { line, data: emptyHotspotRow(), status: 'error' as const, message: 'Username kosong' };
@@ -476,10 +470,10 @@ export function parseHotspotsCsv(text: string, ctx: HotspotImportContext): Parse
     }
 
     let employeeId = '';
-    if (nik) {
-      const found = ctx.nikToId.get(nik.toLowerCase());
+    if (employeeName) {
+      const found = ctx.nameToId.get(employeeName.toLowerCase());
       if (!found) {
-        return { line, data: emptyHotspotRow(), status: 'error' as const, message: `NIK "${nik}" tidak terdaftar` };
+        return { line, data: emptyHotspotRow(), status: 'error' as const, message: `Nama "${employeeName}" tidak terdaftar` };
       }
       employeeId = found;
     }
@@ -506,7 +500,7 @@ export function parseHotspotsCsv(text: string, ctx: HotspotImportContext): Parse
 
 export function downloadHotspotsTemplate() {
   downloadCsv(
-    'nik,username,password,ssid,profil,mac,ip,berlaku,status,catatan',
+    'nama,username,password,ssid,profil,mac,ip,berlaku,status,catatan',
     'template_import_hotspot.csv',
   );
 }

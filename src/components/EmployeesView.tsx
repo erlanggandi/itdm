@@ -56,7 +56,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingEmployee, setEditingEmployee] = useState<Employee | null>(null);
   const [formData, setFormData] = useState({
-    nik: '',
     name: '',
     department: 'Information Technology',
     position: '',
@@ -84,9 +83,9 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
     return map;
   }, [hotspots]);
 
-  // NIK terdaftar (untuk validasi duplikat saat import)
-  const existingNiks = useMemo(() => {
-    return new Set(employees.map(e => e.nik.toLowerCase()));
+  // Nama terdaftar (untuk validasi duplikat saat import)
+  const existingNames = useMemo(() => {
+    return new Set(employees.map(e => e.name.toLowerCase()));
   }, [employees]);
 
   // Filtered + urut abjad A-Z berdasarkan nama
@@ -95,7 +94,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
       .filter(emp => {
         const matchSearch =
           emp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          emp.nik.toLowerCase().includes(searchTerm.toLowerCase()) ||
           emp.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
           emp.department.toLowerCase().includes(searchTerm.toLowerCase());
 
@@ -120,7 +118,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
   const handleOpenAdd = () => {
     setEditingEmployee(null);
     setFormData({
-      nik: `KNG-${new Date().getFullYear()}-${String(employees.length + 1).padStart(3, '0')}`,
       name: '',
       department: departments[0] || 'Information Technology',
       position: '',
@@ -135,7 +132,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
   const handleOpenEdit = (emp: Employee) => {
     setEditingEmployee(emp);
     setFormData({
-      nik: emp.nik,
       name: emp.name,
       department: emp.department,
       position: emp.position,
@@ -156,8 +152,8 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name.trim() || !formData.nik.trim()) {
-      onNotice('NIK dan nama wajib diisi.', 'error');
+    if (!formData.name.trim()) {
+      onNotice('Nama wajib diisi.', 'error');
       return;
     }
 
@@ -218,7 +214,7 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Cari nama, NIK, jabatan…"
+            placeholder="Cari nama, jabatan…"
             className="field !pl-9"
           />
           {searchTerm && (
@@ -292,7 +288,7 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
                           </div>
                           <div className="min-w-0">
                             <span className="font-medium text-zinc-900 block truncate">{emp.name}</span>
-                            <span className="font-mono text-[11px] text-zinc-400">{emp.nik}</span>
+                            <span className="text-[11px] text-zinc-400">{emp.position || emp.department}</span>
                           </div>
                         </div>
                       </td>
@@ -388,13 +384,12 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
           isOpen={isImportOpen}
           onClose={() => setIsImportOpen(false)}
           title="Import karyawan"
-          subtitle="CSV · pratinjau dulu, NIK duplikat dilewati"
-          formatHint="nik, nama, departemen, jabatan, status, tgl_masuk, catatan"
+          subtitle="CSV · pratinjau dulu, nama duplikat dilewati"
+          formatHint="nama, departemen, jabatan, status, tgl_masuk, catatan"
           entityName="karyawan"
-          parse={(text) => parseEmployeesCsv(text, existingNiks)}
+          parse={(text) => parseEmployeesCsv(text, existingNames)}
           columns={[
             { label: 'Nama', render: (d) => d.name || '—' },
-            { label: 'NIK', mono: true, render: (d) => d.nik || '—' },
             { label: 'Departemen', render: (d) => d.department || '—' },
             { label: 'Status', render: (d) => d.status || '—' },
           ]}
@@ -420,33 +415,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
             </div>
 
             <form onSubmit={handleSubmit} className="p-5 space-y-4 overflow-y-auto">
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="lbl">NIK</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.nik}
-                    onChange={(e) => setFormData({ ...formData, nik: e.target.value })}
-                    className="field font-mono"
-                    placeholder="KNG-2024-001"
-                  />
-                </div>
-
-                <div>
-                  <label className="lbl">Status</label>
-                  <select
-                    value={formData.status}
-                    onChange={(e) => setFormData({ ...formData, status: e.target.value as EmployeeStatus })}
-                    className="field"
-                  >
-                    <option value="Aktif">Aktif</option>
-                    <option value="Cuti">Cuti</option>
-                    <option value="Resign">Resign</option>
-                  </select>
-                </div>
-              </div>
-
               <div>
                 <label className="lbl">Nama lengkap</label>
                 <input
@@ -457,6 +425,19 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
                   className="field"
                   placeholder="Nama karyawan"
                 />
+              </div>
+
+              <div>
+                <label className="lbl">Status</label>
+                <select
+                  value={formData.status}
+                  onChange={(e) => setFormData({ ...formData, status: e.target.value as EmployeeStatus })}
+                  className="field"
+                >
+                  <option value="Aktif">Aktif</option>
+                  <option value="Cuti">Cuti</option>
+                  <option value="Resign">Resign</option>
+                </select>
               </div>
 
               <div className="grid grid-cols-2 gap-3">

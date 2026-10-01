@@ -2,7 +2,6 @@ export type EmployeeStatus = 'Aktif' | 'Cuti' | 'Resign';
 
 export interface Employee {
   id: string;
-  nik: string;
   name: string;
   department: string;
   position: string;

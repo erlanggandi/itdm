@@ -79,7 +79,7 @@ export const CredentialSlipModal: React.FC<CredentialSlipModalProps> = ({
         <div className="modal-head no-print">
           <div>
             <h3 className="modal-title">Slip kredensial — {employee.name}</h3>
-            <p className="modal-sub font-mono">IT/DOC/{employee.nik}</p>
+            <p className="modal-sub font-mono">IT/DOC/{employee.id.slice(-6).toUpperCase()}</p>
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -125,7 +125,7 @@ export const CredentialSlipModal: React.FC<CredentialSlipModalProps> = ({
                 <h1 className="text-base font-semibold text-zinc-900 uppercase tracking-wide">
                   Tanda Terima Kredensial Akun IT
                 </h1>
-                <p className="text-xs text-zinc-500 font-mono">IT/DOC/{employee.nik}</p>
+                <p className="text-xs text-zinc-500 font-mono">IT/DOC/{employee.id.slice(-6).toUpperCase()}</p>
               </div>
             </div>
 
@@ -138,10 +138,6 @@ export const CredentialSlipModal: React.FC<CredentialSlipModalProps> = ({
                 <div>
                   <span className="text-zinc-500">Nama Lengkap:</span>
                   <p className="font-bold text-zinc-800 text-sm">{employee.name}</p>
-                </div>
-                <div>
-                  <span className="text-zinc-500">NIK:</span>
-                  <p className="font-bold text-zinc-800 text-sm font-mono">{employee.nik}</p>
                 </div>
                 <div>
                   <span className="text-zinc-500">Departemen / Divisi:</span>

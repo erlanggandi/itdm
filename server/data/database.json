@@ -1,7 +1,6 @@
 {
   "employees": [
     {
-      "nik": "2305011",
       "name": "Ziadatul Munadhoroh",
       "department": "HRGA",
       "position": "Tenaga Pendidik",
@@ -14,7 +13,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2507032",
       "name": "Yosefina Ardi Anyani",
       "department": "HRGA",
       "position": "Office Girl",
@@ -27,7 +25,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020122",
       "name": "Yohanes Portasius",
       "department": "Technical & Development",
       "position": "Manager Technical and Development",
@@ -40,7 +37,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2604020",
       "name": "Yhoga Pradhitya  Sumarno",
       "department": "Finance Accounting & Tax",
       "position": "Admin Commercial",
@@ -53,7 +49,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "KITLT2508001",
       "name": "Yelstry Marsudin",
       "department": "Sekretariat",
       "position": "Corporate Secretary",
@@ -66,7 +61,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020017",
       "name": "Wahyudin",
       "department": "HRGA",
       "position": "Admin Facility & Security",
@@ -79,7 +73,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020187",
       "name": "Wahyudi",
       "department": "Finance Accounting & Tax",
       "position": "Budgeting And Data Analyst",
@@ -92,7 +85,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2606002",
       "name": "Uswatun Khasanah  Wirayanti",
       "department": "Finance Accounting & Tax",
       "position": "Admin Finance & Project",
@@ -105,7 +97,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2609030",
       "name": "Ugustiningtyas Supriatno",
       "department": "IT",
       "position": "Odoo & Backend Jr. Developer",
@@ -118,7 +109,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2202008",
       "name": "Tudang",
       "department": "HRGA",
       "position": "Office Girl",
@@ -131,7 +121,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2607001",
       "name": "Tiara Sambata  Umbas",
       "department": "Engineering",
       "position": "Junior Arsitek",
@@ -144,7 +133,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020087",
       "name": "Sutrayanti. S",
       "department": "HRGA",
       "position": "Foreman HR",
@@ -157,7 +145,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2508002",
       "name": "Surianto",
       "department": "HRGA",
       "position": "Security",
@@ -170,7 +157,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2508023",
       "name": "Sumarlin, ST",
       "department": "Technical & Development",
       "position": "Technical Support Specialist",
@@ -183,7 +169,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2608002",
       "name": "Suhardiman Suhafid",
       "department": "Engineering",
       "position": "Estimator",
@@ -196,7 +181,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2501025",
       "name": "Sonia Pratiwi Paborong",
       "department": "Finance Accounting & Tax",
       "position": "Tax Officer",
@@ -209,7 +193,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020012",
       "name": "Sarmila",
       "department": "SCM (Supply Chain Management)",
       "position": "Foreman Purchasing",
@@ -222,7 +205,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2202010",
       "name": "Sanda",
       "department": "HRGA",
       "position": "Office Girl",
@@ -235,7 +217,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2605021",
       "name": "Sahrul Gunawan B",
       "department": "Finance Accounting & Tax",
       "position": "Admin Finance (Grade JR Officer)",
@@ -248,7 +229,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2603023",
       "name": "Sahabuddin",
       "department": "HRGA",
       "position": "Office Boy",
@@ -261,7 +241,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2608024",
       "name": "Romi Rahman",
       "department": "HRGA",
       "position": "Chef Cook",
@@ -274,7 +253,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2605002",
       "name": "Rizky Setiawan Basri. SE",
       "department": "Bod",
       "position": "Director",
@@ -287,7 +265,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2605002",
       "name": "Rizky Maulana Hasan",
       "department": "HRGA",
       "position": "Admin Training & Development",
@@ -300,7 +277,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2506016",
       "name": "Riatun",
       "department": "HRGA",
       "position": "Manager Hrga",
@@ -313,7 +289,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2307007",
       "name": "Rezky Wulandari, S.St",
       "department": "HSEQT",
       "position": "Foreman Project & Document Control",
@@ -326,7 +301,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2606016",
       "name": "Reymonth Sitorus",
       "department": "IT",
       "position": "Superintendent IT",
@@ -339,7 +313,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2506004",
       "name": "Rebeka Frederika Simamora",
       "department": "IT",
       "position": "Admin IT",
@@ -352,7 +325,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2605006",
       "name": "Rahmi Reskiya",
       "department": "Engineering",
       "position": "Junior Architect/Interior Design",
@@ -365,7 +337,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "INT202509002",
       "name": "Rahmatullah",
       "department": "IT",
       "position": "Apprenticeship - IT",
@@ -378,7 +349,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2509003",
       "name": "Rahmatul Hidayat",
       "department": "HRGA",
       "position": "Security",
@@ -391,7 +361,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2501009",
       "name": "Rahmat Hidayat B",
       "department": "Finance Accounting & Tax",
       "position": "Ap/Ar Officer",
@@ -404,7 +373,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2505007",
       "name": "Rahmat C",
       "department": "HRGA",
       "position": "General Support",
@@ -417,7 +385,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020151",
       "name": "Putri Arsidah Jamaluddin",
       "department": "SCM (Supply Chain Management)",
       "position": "Procurement & Purchasing Officer",
@@ -430,7 +397,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2406041",
       "name": "Prichillia Beatriz Gosal",
       "department": "SCM (Supply Chain Management)",
       "position": "Purchasing Officer",
@@ -443,7 +409,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2609001",
       "name": "Panji Syam Dliyaun",
       "department": "Engineering",
       "position": "Site Supervisor",
@@ -456,7 +421,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2208002",
       "name": "Nurul Syafika",
       "department": "SCM (Supply Chain Management)",
       "position": "Foreman Aset Management",
@@ -469,7 +433,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2605001",
       "name": "Nurul Azisah Nasir",
       "department": "Engineering",
       "position": "Estimator",
@@ -482,7 +445,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2308045",
       "name": "Nurmaya Maghfira Ahmad",
       "department": "SCM (Supply Chain Management)",
       "position": "Purchasing Officer",
@@ -495,7 +457,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2503022",
       "name": "Nurhadi Nurdin",
       "department": "HRGA",
       "position": "Wakar",
@@ -508,7 +469,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020118",
       "name": "Nur Fahri Hidayat Akhmad",
       "department": "Finance Accounting & Tax",
       "position": "Treasury",
@@ -521,7 +481,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2410059",
       "name": "Nur Fadiah",
       "department": "HRGA",
       "position": "Hr Officer",
@@ -534,7 +493,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2406051",
       "name": "Nooraliza Rande Bua",
       "department": "Technical & Development",
       "position": "Supervisor Database Administrator",
@@ -547,7 +505,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2406032",
       "name": "Mukmin",
       "department": "IT",
       "position": "Officer Technical Writer",
@@ -560,7 +517,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2606004",
       "name": "Muhammad Rizal K",
       "department": "SCM (Supply Chain Management)",
       "position": "Manager SCM",
@@ -573,7 +529,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2606001",
       "name": "Muhammad Muhaemin Deni Djafar, S.T.",
       "department": "Engineering",
       "position": "Drafter ( DED Spesialist )",
@@ -586,7 +541,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2203001",
       "name": "Muhammad Hamja Nasir",
       "department": "Finance Accounting & Tax",
       "position": "Supervisor Finance",
@@ -599,7 +553,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2506007",
       "name": "Muhammad Hairul Rizal",
       "department": "IT",
       "position": "Graphic Designer",
@@ -612,7 +565,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2410023",
       "name": "Muhammad Farhan",
       "department": "IT",
       "position": "ERP System Officer  (Acting)",
@@ -625,7 +577,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2605007",
       "name": "Muhammad Dzul Khaffi",
       "department": "Engineering",
       "position": "Site Support",
@@ -638,7 +589,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2604042",
       "name": "Muhammad Ariel  Mifta",
       "department": "Legal",
       "position": "Admin Contract & Agreement",
@@ -651,7 +601,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2605001",
       "name": "Muh.Rafli Apriliansyah Putra",
       "department": "HRGA",
       "position": "Admin GA",
@@ -664,7 +613,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2412003",
       "name": "Muh. Yusriansyah",
       "department": "HRGA",
       "position": "Recruitment & Development Officer",
@@ -677,7 +625,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2504009",
       "name": "Muh. Sultan Salman Syukur",
       "department": "HRGA",
       "position": "Office Boy (Rumah Pak Farid)",
@@ -690,7 +637,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2411019",
       "name": "Muh. Resky Syawal",
       "department": "HRGA",
       "position": "Supervisor HRGA",
@@ -703,7 +649,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2209002",
       "name": "Muh. Luky Ondrey",
       "department": "Sekretariat",
       "position": "Strategic Procurement & Personal Asistant Direksi",
@@ -716,7 +661,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2503019",
       "name": "Muh Dadang Azikin",
       "department": "Technical & Development",
       "position": "Surveyor",
@@ -729,7 +673,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020002",
       "name": "Mohd Umar Mohd Najib",
       "department": "Bod",
       "position": "Director",
@@ -742,7 +685,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020003",
       "name": "Mohd Farid Mohd Najib",
       "department": "Bod",
       "position": "Vice Director",
@@ -755,7 +697,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2412002",
       "name": "Mohammad Muniruzzaman",
       "department": "HRGA",
       "position": "Admin Ga",
@@ -768,7 +709,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2506019",
       "name": "Mohamad Zaha Izrin Bin Zahari",
       "department": "Business Development",
       "position": "Strategic Business Development",
@@ -781,7 +721,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2511021",
       "name": "Moh. Fuad Patandi",
       "department": "HRGA",
       "position": "Admin HR Recruitment",
@@ -794,7 +733,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2408051",
       "name": "Mochammad Fahreza Ibrahim",
       "department": "HRGA",
       "position": "Supervisor Faciities, Security & PA Direksi",
@@ -807,7 +745,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "INT0601003",
       "name": "Mirza Zulham Ahmad",
       "department": "IT",
       "position": "Apprenticeship - IT",
@@ -820,7 +757,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2408033",
       "name": "Miftakhaeriah",
       "department": "Technical & Development",
       "position": "Officer GIS Database (Acting)",
@@ -833,7 +769,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2605022",
       "name": "Mahesa  Apriadi",
       "department": "Finance Accounting & Tax",
       "position": "Finance Officer",
@@ -846,7 +781,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2605005",
       "name": "M. Hidayat Rahimudin",
       "department": "Engineering",
       "position": "Site Supervisor",
@@ -859,7 +793,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2605003",
       "name": "Lucky Setiawan Putra",
       "department": "Bod",
       "position": "Vice Director",
@@ -872,7 +805,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2608023",
       "name": "Lola",
       "department": "HRGA",
       "position": "Office Girl",
@@ -885,7 +817,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2202012",
       "name": "Lisa Tanglao",
       "department": "HRGA",
       "position": "Office Girl",
@@ -898,7 +829,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2604019",
       "name": "Kholil Haq. AH",
       "department": "IT",
       "position": "AI Developer",
@@ -911,7 +841,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020073",
       "name": "Is Tri Prasetya Wardhana",
       "department": "Finance Accounting & Tax",
       "position": "Manager Finance, Accounting & Tax",
@@ -924,7 +853,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "INT202509004",
       "name": "Imam",
       "department": "SCM (Supply Chain Management)",
       "position": "Apprenticeship SCM ( Supplay Chain Management )",
@@ -937,7 +865,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2505005",
       "name": "Ian Bonita",
       "department": "IT",
       "position": "Marketing Communication Officer",
@@ -950,7 +877,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020141",
       "name": "Husban",
       "department": "HRGA",
       "position": "Admin Facility & Security",
@@ -963,7 +889,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2506005",
       "name": "Holyvia Bongga Pasau",
       "department": "HSEQT",
       "position": "Admin HSEQ",
@@ -976,7 +901,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2202011",
       "name": "Herman HO",
       "department": "HRGA",
       "position": "Admin Facility & Security",
@@ -989,7 +913,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2504005",
       "name": "Hendrik Hendrawan",
       "department": "HRGA",
       "position": "Office Boy",
@@ -1002,7 +925,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2208013",
       "name": "Habibi, S.E",
       "department": "Finance Accounting & Tax",
       "position": "Foreman Accounting",
@@ -1015,7 +937,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2511020",
       "name": "Gunawan Mahendra",
       "department": "HRGA",
       "position": "Officer HR (Acting)",
@@ -1028,7 +949,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2501014",
       "name": "Francesco Xavier Kolly Mally",
       "department": "IT",
       "position": "Manager IT",
@@ -1041,7 +961,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "BN202508001",
       "name": "Fauziah Yunira S.Ak",
       "department": "Finance Accounting & Tax",
       "position": "Finance",
@@ -1054,7 +973,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2506008",
       "name": "Farhan",
       "department": "IT",
       "position": "Front End Programmer",
@@ -1067,7 +985,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2604033",
       "name": "Ermiyanti",
       "department": "HRGA",
       "position": "Office Girl ( Rumah Pak Umar )",
@@ -1080,7 +997,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2506018",
       "name": "Edy Burhan Klaudius",
       "department": "HRGA",
       "position": "Wakar",
@@ -1093,7 +1009,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2509008",
       "name": "Dwi Rakhmawati",
       "department": "HRGA",
       "position": "Supervisor Recruitment & Development",
@@ -1106,7 +1021,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2306008",
       "name": "Budiarto",
       "department": "HRGA",
       "position": "Admin Facility & Security",
@@ -1119,7 +1033,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2207010",
       "name": "Budi Andrian",
       "department": "Finance Accounting & Tax",
       "position": "Ap/Ar Officer",
@@ -1132,7 +1045,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2503023",
       "name": "Baso Amin",
       "department": "HRGA",
       "position": "General Support",
@@ -1145,7 +1057,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2408014",
       "name": "Awal Septiawan",
       "department": "Finance Accounting & Tax",
       "position": "Accounting Officer",
@@ -1158,7 +1069,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2408050",
       "name": "Aswan",
       "department": "Technical & Development",
       "position": "Sr. Mine Plan Engineering",
@@ -1171,7 +1081,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2307010",
       "name": "Asmah Yusan, Se,M.Ak",
       "department": "Management",
       "position": "Audit Internal",
@@ -1184,7 +1093,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2406031",
       "name": "Aryo Wicaksono Bagus Setiawan",
       "department": "SCM (Supply Chain Management)",
       "position": "Admin Scm",
@@ -1197,7 +1105,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2501008",
       "name": "Arif Rahman Hakim",
       "department": "Business Development",
       "position": "Manager Business Development",
@@ -1210,7 +1117,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020006",
       "name": "Anwar Amir",
       "department": "SCM (Supply Chain Management)",
       "position": "Supervisor Procurement",
@@ -1223,7 +1129,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2507001",
       "name": "Annisa Yurna Megarezky Yusri",
       "department": "Sekretariat",
       "position": "Corporate Secretary",
@@ -1236,7 +1141,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2507006",
       "name": "Angela Aziza Paramita",
       "department": "HRGA",
       "position": "Receptionist",
@@ -1249,7 +1153,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2202013",
       "name": "Andreas Randa Solon",
       "department": "HRGA",
       "position": "Admin Facility & Security",
@@ -1262,7 +1165,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2405005",
       "name": "Andirani Kristianty",
       "department": "HRGA",
       "position": "Foreman Recruitment And Training",
@@ -1275,7 +1177,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "LSP2510001",
       "name": "ANDI NASRUL SYAH R",
       "department": "Management",
       "position": "Director",
@@ -1288,7 +1189,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2605004",
       "name": "Andi Muh As'ad ST",
       "department": "Engineering",
       "position": "Senior Architect",
@@ -1301,7 +1201,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020052",
       "name": "Andi Erlangga",
       "department": "IT",
       "position": "Support Leader Foreman",
@@ -1314,7 +1213,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "GSL2606001",
       "name": "Ainun Zamira Yusan",
       "department": "Bod",
       "position": "Komisaris",
@@ -1327,7 +1225,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2509002",
       "name": "Aida Miftakhul Jannah",
       "department": "IT",
       "position": "Backend Developer (Odoo Developer)",
@@ -1340,7 +1237,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "RKF2608001",
       "name": "Ahmad  Yunus",
       "department": "Engineering",
       "position": "Project Manager",
@@ -1353,7 +1249,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2408008",
       "name": "Adhie Wahyudi S.",
       "department": "Management",
       "position": "General Manager",
@@ -1366,7 +1261,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2506006",
       "name": "Abdullah Tajuddin",
       "department": "IT",
       "position": "Helper IT Support",
@@ -1379,7 +1273,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "2605015",
       "name": "Abdul Mutalib Pakaya",
       "department": "Sekretariat",
       "position": "Personal Assistant Vice Director",
@@ -1392,7 +1285,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "18020004",
       "name": "Abdul Malik Muin",
       "department": "Boc",
       "position": "Komisaris",
@@ -1405,7 +1297,6 @@
       "updatedAt": "2026-09-26T23:05:03.865Z"
     },
     {
-      "nik": "KNG-2026-001",
       "name": "tes",
       "department": "Information Technology",
       "position": "sd",

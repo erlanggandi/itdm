@@ -254,7 +254,7 @@ export const BackupRestoreModal: React.FC<BackupRestoreModalProps> = ({
             <div className="space-y-6">
               <div>
                 <p className="lbl">CSV</p>
-                {exportRow('Karyawan', 'nik, nama, departemen', () => {
+                {exportRow('Karyawan', 'nama, departemen', () => {
                   exportEmployeesCsv(employees);
                   onNotice('CSV karyawan diunduh.', 'success');
                 })}

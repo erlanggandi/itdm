@@ -50,7 +50,6 @@ export function downloadText(content: string, filename: string, mimeType = 'text
 export function exportEmployeesCsv(employees: Employee[]) {
   const headers = [
     'ID Karyawan',
-    'NIK',
     'Nama Lengkap',
     'Departemen / Divisi',
     'Jabatan',
@@ -61,7 +60,6 @@ export function exportEmployeesCsv(employees: Employee[]) {
 
   const rows = employees.map(emp => [
     escapeCsv(emp.id),
-    escapeCsv(emp.nik),
     escapeCsv(emp.name),
     escapeCsv(emp.department),
     escapeCsv(emp.position),
@@ -82,7 +80,6 @@ export function exportEmailsCsv(emails: EmailAccount[], employees: Employee[]) {
   const empMap = new Map(employees.map(e => [e.id, e]));
 
   const headers = [
-    'NIK Karyawan',
     'Nama Karyawan',
     'Departemen',
     'Alamat Email',
@@ -100,7 +97,6 @@ export function exportEmailsCsv(emails: EmailAccount[], employees: Employee[]) {
   const rows = emails.map(m => {
     const emp = empMap.get(m.employeeId);
     return [
-      escapeCsv(emp?.nik || '-'),
       escapeCsv(emp?.name || 'Shared / Umum'),
       escapeCsv(emp?.department || '-'),
       escapeCsv(m.email),
@@ -128,7 +124,6 @@ export function exportHotspotsCsv(hotspots: HotspotAccount[], employees: Employe
   const empMap = new Map(employees.map(e => [e.id, e]));
 
   const headers = [
-    'NIK Karyawan',
     'Nama Karyawan',
     'Departemen',
     'Username Hotspot',
@@ -145,7 +140,6 @@ export function exportHotspotsCsv(hotspots: HotspotAccount[], employees: Employe
   const rows = hotspots.map(h => {
     const emp = empMap.get(h.employeeId);
     return [
-      escapeCsv(emp?.nik || '-'),
       escapeCsv(emp?.name || 'Tamu / Umum'),
       escapeCsv(emp?.department || '-'),
       escapeCsv(h.username),
@@ -183,7 +177,7 @@ export function exportMikrotikRsc(hotspots: HotspotAccount[], employees: Employe
 
   hotspots.forEach(h => {
     const emp = empMap.get(h.employeeId);
-    const comment = `${emp ? `${emp.nik} - ${emp.name} (${emp.department})` : 'Akun Umum'}${h.notes ? ' | ' + h.notes : ''}`;
+    const comment = `${emp ? `${emp.name} (${emp.department})` : 'Akun Umum'}${h.notes ? ' | ' + h.notes : ''}`;
     const disabled = h.status === 'Aktif' ? 'no' : 'yes';
 
     let cmd = `add name="${h.username}" password="${h.password}" profile="${h.profile}"`;

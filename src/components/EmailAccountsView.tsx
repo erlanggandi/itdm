@@ -96,13 +96,13 @@ export const EmailAccountsView: React.FC<EmailAccountsViewProps> = ({
     return new Map(employees.map(e => [e.id, e]));
   }, [employees]);
 
-  // Index untuk validasi import: email terdaftar + NIK -> id karyawan
+  // Index untuk validasi import: email terdaftar + nama -> id karyawan
   const existingEmails = useMemo(() => {
     return new Set(emails.map(m => m.email.toLowerCase()));
   }, [emails]);
 
-  const nikToId = useMemo(() => {
-    return new Map(employees.map(e => [e.nik.toLowerCase(), e.id]));
+  const nameToId = useMemo(() => {
+    return new Map(employees.map(e => [e.name.toLowerCase(), e.id]));
   }, [employees]);
 
   // Filtered List
@@ -114,7 +114,6 @@ export const EmailAccountsView: React.FC<EmailAccountsViewProps> = ({
       const matchSearch =
         m.email.toLowerCase().includes(search) ||
         (emp && emp.name.toLowerCase().includes(search)) ||
-        (emp && emp.nik.toLowerCase().includes(search)) ||
         (emp && emp.department.toLowerCase().includes(search)) ||
         (m.notes && m.notes.toLowerCase().includes(search));
 
@@ -271,7 +270,7 @@ export const EmailAccountsView: React.FC<EmailAccountsViewProps> = ({
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Cari email, nama, NIK…"
+            placeholder="Cari email, nama…"
             className="field !pl-9"
           />
           {searchTerm && (
@@ -365,10 +364,7 @@ export const EmailAccountsView: React.FC<EmailAccountsViewProps> = ({
 
                       <td>
                         {emp ? (
-                          <div>
-                            <span className="text-zinc-800 block">{emp.name}</span>
-                            <span className="font-mono text-[11px] text-zinc-400">{emp.nik}</span>
-                          </div>
+                          <span className="text-zinc-800 block">{emp.name}</span>
                         ) : (
                           <span className="text-zinc-300">—</span>
                         )}
@@ -475,10 +471,10 @@ export const EmailAccountsView: React.FC<EmailAccountsViewProps> = ({
           isOpen={isImportOpen}
           onClose={() => setIsImportOpen(false)}
           title="Import akun email"
-          subtitle="CSV · NIK diisi untuk menautkan ke karyawan, password kosong = dibuatkan otomatis"
-          formatHint="nik, email, password, provider, lisensi, status, 2fa, recovery, forward, catatan"
+          subtitle="CSV · nama diisi untuk menautkan ke karyawan, password kosong = dibuatkan otomatis"
+          formatHint="nama, email, password, provider, lisensi, status, 2fa, recovery, forward, catatan"
           entityName="akun email"
-          parse={(text) => parseEmailsCsv(text, { existingEmails, nikToId })}
+          parse={(text) => parseEmailsCsv(text, { existingEmails, nameToId })}
           columns={[
             { label: 'Email', mono: true, render: (d) => d.email || '—' },
             { label: 'Password', mono: true, render: (d) => d.password || '—' },
@@ -523,7 +519,7 @@ export const EmailAccountsView: React.FC<EmailAccountsViewProps> = ({
                   <option value="">— Tanpa pemilik —</option>
                   {employees.map(emp => (
                     <option key={emp.id} value={emp.id}>
-                      {emp.name} ({emp.nik})
+                      {emp.name}
                     </option>
                   ))}
                 </select>

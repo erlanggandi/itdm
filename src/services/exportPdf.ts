@@ -72,7 +72,7 @@ export function exportMasterReportPdf(
     const emp = empMap.get(m.employeeId);
     return [
       idx + 1,
-      emp ? `${emp.name}\n(${emp.nik})` : 'Shared / Umum',
+      emp ? emp.name : 'Shared / Umum',
       emp?.department || '-',
       m.email,
       m.password,
@@ -140,7 +140,7 @@ export function exportMasterReportPdf(
     const emp = empMap.get(h.employeeId);
     return [
       idx + 1,
-      emp ? `${emp.name}\n(${emp.nik})` : 'Tamu / Umum',
+      emp ? emp.name : 'Tamu / Umum',
       emp?.department || '-',
       h.username,
       h.password,
@@ -236,7 +236,7 @@ export function exportEmailsReportPdf(
     const emp = empMap.get(m.employeeId);
     return [
       idx + 1,
-      emp ? `${emp.name}\n${emp.nik}` : 'Umum / Shared',
+      emp ? emp.name : 'Umum / Shared',
       emp?.department || '-',
       m.email,
       m.password,
@@ -331,7 +331,7 @@ export function exportHotspotsReportPdf(
     const emp = empMap.get(h.employeeId);
     return [
       idx + 1,
-      emp ? `${emp.name}\n${emp.nik}` : 'Tamu / Umum',
+      emp ? emp.name : 'Tamu / Umum',
       emp?.department || '-',
       h.username,
       h.password,
@@ -473,10 +473,10 @@ export function generateEmployeeCredentialSlipPdf(
 
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(71, 85, 105);
-  doc.text('NIK Karyawan', col2X, y);
+  doc.text('Tanggal Penyerahan', col2X, y);
   doc.setFont('helvetica', 'bold');
   doc.setTextColor(15, 23, 42);
-  doc.text(`: ${employee.nik}`, col2ValX, y);
+  doc.text(`: ${currentDate}`, col2ValX, y);
 
   y += 7;
   doc.setFont('helvetica', 'normal');
@@ -492,12 +492,6 @@ export function generateEmployeeCredentialSlipPdf(
   doc.setFont('helvetica', 'bold');
   doc.setTextColor(15, 23, 42);
   doc.text(`: ${employee.position}`, col2ValX, y);
-
-  y += 7;
-  doc.setFont('helvetica', 'normal');
-  doc.setTextColor(71, 85, 105);
-  doc.text('Tanggal Penyerahan', col1X, y);
-  doc.text(`: ${currentDate}`, col1ValX, y);
 
   // SECTION 2: Akun Email Perusahaan
   y += 12;
@@ -671,5 +665,5 @@ export function generateEmployeeCredentialSlipPdf(
   doc.text(`Dokumen ini dicetak otomatis dari Sistem IT Data Platform pada ${currentDate}`, 105, 290, { align: 'center' });
 
   const safeName = employee.name.replace(/[^a-zA-Z0-9]/g, '_');
-  doc.save(`Slip_Akun_IT_${employee.nik}_${safeName}.pdf`);
+  doc.save(`Slip_Akun_IT_${safeName}.pdf`);
 }
