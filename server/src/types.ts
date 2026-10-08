@@ -7,7 +7,6 @@ export interface Employee {
   position: string;
   phone: string;
   status: EmployeeStatus;
-  joinDate: string;
   notes?: string;
   createdAt: string;
   updatedAt: string;

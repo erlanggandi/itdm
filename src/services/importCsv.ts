@@ -77,10 +77,6 @@ const HEADER_ALIASES: Record<string, string> = {
   status: 'status',
   statuskaryawan: 'status',
   statusakun: 'status',
-  tanggalmasuk: 'joinDate',
-  tglmasuk: 'joinDate',
-  tanggal: 'joinDate',
-  joindate: 'joinDate',
   catatan: 'notes',
   catatanit: 'notes',
   catatanakun: 'notes',
@@ -258,7 +254,7 @@ const today = () => new Date().toISOString().slice(0, 10);
 // ─── Karyawan ────────────────────────────────────────────────────────────────
 
 function emptyEmployeeRow(): EmployeeImportRow {
-  return { name: '', department: '', position: '', phone: '', status: 'Aktif', joinDate: '', notes: '' };
+  return { name: '', department: '', position: '', phone: '', status: 'Aktif', notes: '' };
 }
 
 export function parseEmployeesCsv(text: string, existingNames: Set<string>): ParsedEmployeeRow[] {
@@ -304,7 +300,6 @@ export function parseEmployeesCsv(text: string, existingNames: Set<string>): Par
         position: get('position'),
         phone: '',
         status,
-        joinDate: normalizeDate(get('joinDate')),
         notes: get('notes'),
       },
       status: 'valid' as const,
@@ -313,7 +308,7 @@ export function parseEmployeesCsv(text: string, existingNames: Set<string>): Par
 }
 
 export function downloadEmployeesTemplate() {
-  downloadCsv('nama,departemen,jabatan,status,tgl_masuk,catatan', 'template_import_karyawan.csv');
+  downloadCsv('nama,departemen,jabatan,status,catatan', 'template_import_karyawan.csv');
 }
 
 // ─── Email ───────────────────────────────────────────────────────────────────

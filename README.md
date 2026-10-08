@@ -8,7 +8,7 @@ Aplikasi web modern yang dirancang khusus untuk **IT Administrator, Network Engi
 ## 🌟 Fitur Utama
 
 ### 1. Manajemen Master Data Karyawan
-- Pencatatan data karyawan: **Nama Lengkap**, **Departemen/Divisi**, **Jabatan**, **No. HP/WhatsApp**, **Status** (Aktif, Cuti, Resign), dan **Tanggal Masuk**.
+- Pencatatan data karyawan: **Nama Lengkap**, **Departemen/Divisi**, **Jabatan**, **No. HP/WhatsApp**, dan **Status** (Aktif, Cuti, Resign).
 - Indikator status akun yang terhubung (apakah karyawan sudah memiliki akun email atau login hotspot).
 - Fitur pencarian instan dan filter berdasarkan departemen serta status karyawan.
 

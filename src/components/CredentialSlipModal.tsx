@@ -251,7 +251,6 @@ export const CredentialSlipModal: React.FC<CredentialSlipModalProps> = ({
                 Kebijakan keamanan:
               </div>
               <ul className="list-disc list-inside space-y-0.5 pl-1">
-                <li>Ganti password awal saat login pertama.</li>
                 <li>Jangan bagikan akun ke orang lain.</li>
                 <li>Laporkan ke IT bila ada indikasi kebocoran.</li>
               </ul>

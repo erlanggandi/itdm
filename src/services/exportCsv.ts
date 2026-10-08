@@ -54,7 +54,6 @@ export function exportEmployeesCsv(employees: Employee[]) {
     'Departemen / Divisi',
     'Jabatan',
     'Status Karyawan',
-    'Tanggal Masuk',
     'Catatan IT',
   ];
 
@@ -64,7 +63,6 @@ export function exportEmployeesCsv(employees: Employee[]) {
     escapeCsv(emp.department),
     escapeCsv(emp.position),
     escapeCsv(emp.status),
-    escapeCsv(emp.joinDate),
     escapeCsv(emp.notes || ''),
   ]);
 

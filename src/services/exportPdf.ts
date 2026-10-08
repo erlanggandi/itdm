@@ -632,10 +632,9 @@ export function generateEmployeeCredentialSlipPdf(
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(7.5);
   doc.setTextColor(113, 63, 18);
-  doc.text('1. Karyawan WAJIB mengganti password awal pada saat pertama kali login ke sistem.', 18, y + 10);
-  doc.text('2. Password bersifat PRIBADI dan RAHASIA. Dilarang membagikan atau meminjamkan akun kepada rekan kerja lain.', 18, y + 14);
-  doc.text('3. Fasilitas email dan internet kantor dipergunakan semata-mata untuk kepentingan pekerjaan perusahaan.', 18, y + 18);
-  doc.text('4. Bila terjadi indikasi kebocoran akun atau perangkat kerja hilang, segera hubungi IT Support dalam kurun waktu 1x24 jam.', 18, y + 22);
+  doc.text('1. Password bersifat PRIBADI dan RAHASIA. Dilarang membagikan atau meminjamkan akun kepada rekan kerja lain.', 18, y + 10);
+  doc.text('2. Fasilitas email dan internet kantor dipergunakan semata-mata untuk kepentingan pekerjaan perusahaan.', 18, y + 14);
+  doc.text('3. Bila terjadi indikasi kebocoran akun atau perangkat kerja hilang, segera hubungi IT Support dalam kurun waktu 1x24 jam.', 18, y + 18);
 
   // SECTION 5: Signatures Block
   y += 32;

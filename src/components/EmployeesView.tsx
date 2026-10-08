@@ -61,7 +61,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
     position: '',
     phone: '',
     status: 'Aktif' as EmployeeStatus,
-    joinDate: new Date().toISOString().slice(0, 10),
     notes: '',
   });
 
@@ -123,7 +122,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
       position: '',
       phone: '',
       status: 'Aktif',
-      joinDate: new Date().toISOString().slice(0, 10),
       notes: '',
     });
     setIsModalOpen(true);
@@ -137,7 +135,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
       position: emp.position,
       phone: emp.phone,
       status: emp.status,
-      joinDate: emp.joinDate,
       notes: emp.notes || '',
     });
     setIsModalOpen(true);
@@ -263,14 +260,13 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
                 <th>Departemen / Jabatan</th>
                 <th>Status</th>
                 <th>Akun</th>
-                <th>Masuk</th>
                 <th><span className="sr-only">Aksi</span></th>
               </tr>
             </thead>
             <tbody>
               {filteredEmployees.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="!py-10 text-center text-zinc-400">
+                  <td colSpan={5} className="!py-10 text-center text-zinc-400">
                     Tidak ada hasil untuk filter ini.
                   </td>
                 </tr>
@@ -330,10 +326,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
                         </div>
                       </td>
 
-                      <td className="font-mono text-xs text-zinc-400 whitespace-nowrap">
-                        {emp.joinDate || '—'}
-                      </td>
-
                       <td className="text-right whitespace-nowrap">
                         <button
                           onClick={() => onOpenCredentialSlip(emp)}
@@ -385,7 +377,7 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
           onClose={() => setIsImportOpen(false)}
           title="Import karyawan"
           subtitle="CSV · pratinjau dulu, nama duplikat dilewati"
-          formatHint="nama, departemen, jabatan, status, tgl_masuk, catatan"
+          formatHint="nama, departemen, jabatan, status, catatan"
           entityName="karyawan"
           parse={(text) => parseEmployeesCsv(text, existingNames)}
           columns={[
@@ -462,16 +454,6 @@ export const EmployeesView: React.FC<EmployeesViewProps> = ({
                     className="field"
                   />
                 </div>
-              </div>
-
-              <div>
-                <label className="lbl">Tanggal masuk</label>
-                <input
-                  type="date"
-                  value={formData.joinDate}
-                  onChange={(e) => setFormData({ ...formData, joinDate: e.target.value })}
-                  className="field"
-                />
               </div>
 
               <div>
